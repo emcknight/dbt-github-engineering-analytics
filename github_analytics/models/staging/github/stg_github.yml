@@ -1,0 +1,53 @@
+version: 2
+
+models:
+  - name: stg_github_issues
+    description: "Staged GitHub issues with standardized column names and data types."
+    columns:
+      - name: issue_id
+        tests:
+          - not_null
+          - unique
+
+      - name: issue_type
+        tests:
+          - accepted_values:
+              values: ['bug', 'feature', 'chore']
+
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['open', 'closed']
+
+  - name: stg_github_pull_requests
+    description: "Staged GitHub pull requests."
+    columns:
+      - name: pr_id
+        tests:
+          - not_null
+          - unique
+
+      - name: issue_id
+        tests:
+          - relationships:
+              to: ref('stg_github_issues')
+              field: issue_id
+
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['open', 'merged', 'closed']
+
+  - name: stg_github_commits
+    description: "Staged GitHub commits."
+    columns:
+      - name: commit_id
+        tests:
+          - not_null
+          - unique
+
+      - name: pr_id
+        tests:
+          - relationships:
+              to: ref('stg_github_pull_requests')
+              field: pr_id

@@ -17,5 +17,9 @@ clean-targets:
 
 models:
   github_analytics:
-    example:
+    staging:
       +materialized: view
+    intermediate:
+      +materialized: view
+    marts:
+      +materialized: table
