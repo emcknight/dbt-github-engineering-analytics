@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: int_issue_lifecycle
+    description: "Issue lifecycle metrics derived from GitHub issues."
+    columns:
+      - name: issue_id
+        tests:
+          - not_null
+          - unique
+
+      - name: days_open
+        description: "Number of days the issue has been open."
+
+      - name: is_closed
+        description: "Boolean indicating whether the issue is closed."
