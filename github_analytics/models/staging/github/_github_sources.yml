@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: github
+    schema: main
+    tables:
+      - name: github_issues
+        description: "Raw GitHub issues data loaded from CSV seeds"
+      - name: github_pull_requests
+        description: "Raw GitHub pull requests data loaded from CSV seeds"
+      - name: github_commits
+        description: "Raw GitHub commits data loaded from CSV seeds"

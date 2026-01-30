@@ -1,0 +1,6 @@
+issue_id,repository,author,issue_type,status,created_at,closed_at
+1,api-service,alice,bug,closed,2023-01-02,2023-01-05
+2,api-service,bob,feature,open,2023-01-03,
+3,web-app,carol,bug,closed,2023-01-04,2023-01-10
+4,web-app,alice,chore,closed,2023-01-06,2023-01-07
+5,data-pipeline,dave,feature,closed,2023-01-08,2023-01-15

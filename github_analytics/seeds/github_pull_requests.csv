@@ -1,0 +1,6 @@
+pr_id,issue_id,repository,author,created_at,merged_at,closed_at,status
+101,1,api-service,alice,2023-01-02,2023-01-04,,merged
+102,2,api-service,bob,2023-01-04,,,open
+103,3,web-app,carol,2023-01-05,2023-01-09,,merged
+104,4,web-app,alice,2023-01-06,2023-01-06,,merged
+105,5,data-pipeline,dave,2023-01-09,2023-01-14,,merged
