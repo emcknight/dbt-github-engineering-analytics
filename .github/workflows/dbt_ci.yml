@@ -24,8 +24,8 @@ jobs:
 
       - name: Run dbt
         run: |
-          export DBT_PROFILES_DIR=github_analytics/profiles
-          cd github_analytics
-          dbt seed
-          dbt run
-          dbt test
+            export DBT_PROFILES_DIR="$GITHUB_WORKSPACE/github_analytics/profiles"
+            cd github_analytics
+            dbt seed
+            dbt run
+            dbt test
