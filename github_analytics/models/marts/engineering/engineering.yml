@@ -16,9 +16,17 @@ models:
           - unique
 
   - name: fct_pr_cycle_time
-    description: "PR-level fact table capturing cycle time and commit volume."
+    description: >
+      Fact table with one row per pull request, capturing
+      PR cycle time and commit volume. Materialized incrementally
+      after an initial historical backfill.
     columns:
       - name: pr_id
+        description: Primary key for the pull request.
         tests:
           - not_null
           - unique
+      - name: cycle_time_days
+        description: Number of days between PR creation and merge.
+      - name: commit_count
+        description: Number of commits associated with the PR.
