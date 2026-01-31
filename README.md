@@ -39,6 +39,7 @@ process only new or updated pull requests.
 ## Docs
 Run:
 ```bash
+cd github_analytics
 dbt docs generate
 dbt docs serve
 ```
